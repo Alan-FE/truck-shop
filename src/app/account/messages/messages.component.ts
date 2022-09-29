@@ -45,7 +45,19 @@ export class MessagesComponent implements OnInit {
       message: this.replyForm.value.message
     };
     console.log(this.replyForm.value);
-    this.messagesService.sendMessage(obj);
+    this.messagesService.sendMessage(obj).subscribe((response: any) => {
+      if(response.result) {
+        
+       for(let message in this.messages) {
+        if(this.messages[message].id == to) {
+          let obj = {from: this.authService.userData.id, message: this.replyForm.value.message, 
+            timestamp: Date.now(), to:to}
+          this.messages[message].messages.push(obj);
+          this.replyForm.reset();
+        }
+       }
+      }
+    })
   }
 
 }
