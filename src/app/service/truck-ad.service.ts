@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class TruckAdService {
-  serverUrl: string = environment.serverUrl;
+  serverUrl: string = 'https://iv-solution.net/cdl-zoom/rest/';
   headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });

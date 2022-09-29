@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class SharedService {
   subject = new Subject<any>();
-  serverUrl: string = environment.serverUrl;
+  serverUrl: string = 'https://iv-solution.net/cdl-zoom/rest/';
   headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
