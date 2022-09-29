@@ -1,0 +1,63 @@
+<!--Filters-->
+<form [formGroup]="rimsForm" (ngSubmit)="search()">
+
+    <div class="radio-container">
+        <div class="label-container">
+            <label class="label">Type</label>
+        </div>
+        <mat-form-field [appearance]="none" class="radio-btns">
+            <mat-radio-group aria-label="Select an option" formControlName="type">
+                <mat-radio-button value="alu" class="radio-opt">Alu</mat-radio-button>
+                <mat-radio-button value="steel" class="radio-opt">Steel</mat-radio-button>
+                <mat-radio-button value="hubcap" class="radio-opt">Hubcap</mat-radio-button>
+            </mat-radio-group>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="group">
+        <label class="label label-m">Dimensions and brand</label><br>
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Diameter</mat-label>
+            <mat-select formControlName="diameter" multiple>
+                <mat-option *ngFor="let diameter of diameters" [value]="diameter">{{ diameter }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group">
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Number and range of holes</mat-label>
+            <mat-select formControlName="noAndRangeOfHoles">
+            <mat-option>None</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group">
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Brands</mat-label>
+            <mat-select formControlName="brands">
+            <mat-option>None</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group checks-btn">
+        <div class="left">
+            <label class="label">Condition</label><br>
+            <mat-form-field [appearance]="none" class="inputs">
+                <section class="example-section">
+                    <mat-checkbox formControlName="used">Used</mat-checkbox>
+                    <mat-checkbox formControlName="new" class="check-box">New</mat-checkbox>
+                </section>
+                <textarea matInput hidden></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="btn">
+            <button mat-raised-button color="primary" type="submit">SEARCH</button>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,18 @@
+@import '../../../../shared-style';
+
+
+.group {
+   @extend %group;
+};
+
+.group-inpt {
+    @extend %group-inpt;
+}
+
+.checks-btn {
+    @extend %btn-inpt;
+};
+
+.btn {
+    @extend %btn-size;
+};

@@ -1,0 +1,102 @@
+<!--Edit ad-->
+<ng-container *ngIf="category == 'trucks-under-seven'">
+    <div class="card-container">
+        <mat-card class="ad-card">
+            <mat-tab-group backgroundColor="primary" dynamicHeight>
+                <mat-tab>
+                <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/truck-to-7.svg" alt="truck-to-7">
+                </ng-template>
+                <mat-card-content class="content">
+                    <app-truck-to-seven-form [truckToSevenForm]="initForm" [editMode]="edit" [id]="adId"></app-truck-to-seven-form>
+                </mat-card-content>
+                </mat-tab>
+            </mat-tab-group>    
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="category == 'trucks-over-seven'">
+    <div class="card-container">
+        <mat-card class="ad-card">
+            <mat-tab-group backgroundColor="primary" dynamicHeight>
+                <mat-tab>
+                <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/truck-over-7.svg" alt="truck-over-7">
+                </ng-template>
+                <mat-card-content class="content">
+                    <app-truck-over-seven-form [truckOverSevenForm]="initForm" [editMode]="edit" [id]="adId"></app-truck-over-seven-form>
+                </mat-card-content>
+                </mat-tab>
+            </mat-tab-group>    
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="category == 'trailer'">
+    <div class="card-container">
+        <mat-card class="ad-card">
+            <mat-tab-group backgroundColor="primary" dynamicHeight>
+                <mat-tab>
+                <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/trailer.svg" alt="trailer">
+                </ng-template>
+                <mat-card-content class="content">
+                    <app-trailer-form [trailerForm]="initForm" [editMode]="edit" [id]="adId"></app-trailer-form>
+                </mat-card-content>
+                </mat-tab>
+            </mat-tab-group>    
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="category == 'rims'">
+    <div class="card-container">
+        <mat-card class="ad-card">
+            <mat-tab-group backgroundColor="primary" dynamicHeight>
+                <mat-tab>
+                <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/rims.svg" alt="rims">
+                </ng-template>
+                <mat-card-content class="content">
+                    <app-rim-form [rimsForm]="initForm" [editMode]="edit" [id]="adId"></app-rim-form>
+                </mat-card-content>
+                </mat-tab>
+            </mat-tab-group>    
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="category == 'tires'">
+    <div class="card-container">
+        <mat-card class="ad-card">
+            <mat-tab-group backgroundColor="primary" dynamicHeight>
+                <mat-tab>
+                <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/tire.svg" alt="tires">
+                </ng-template>
+                <mat-card-content class="content">
+                    <app-tire-form [tireForm]="initForm" [editMode]="edit" [id]="adId"></app-tire-form>
+                </mat-card-content>
+                </mat-tab>
+            </mat-tab-group>    
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="category == 'parts'">
+    <div class="card-container">
+        <mat-card class="ad-card">
+            <mat-tab-group backgroundColor="primary" dynamicHeight>
+                <mat-tab>
+                <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/parts.svg" alt="tires">
+                </ng-template>
+                <mat-card-content class="content">
+                    <app-parts-form [partsForm]="initForm" [editMode]="edit" [id]="adId"></app-parts-form>
+                </mat-card-content>
+                </mat-tab>
+            </mat-tab-group>    
+        </mat-card>
+    </div>
+</ng-container>

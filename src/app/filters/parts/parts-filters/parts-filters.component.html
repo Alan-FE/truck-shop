@@ -1,0 +1,38 @@
+<!--Filters-->
+<form [formGroup]="partsForm" (ngSubmit)="search()">
+    <div class="group">
+        <label class="label">Category</label><br>
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let category of trucksCategory" [value]="category">{{ category }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group-inpt">
+        <mat-form-field appearance="outline" class="inputs">
+            <input matInput type="text" autocomplete="off" formControlName="parts"
+            placeholder="Enter the part you are looking for (eg. seats, steering wheel...)">
+        </mat-form-field>
+    </div>
+
+    <div class="group checks-btn">
+        <div class="left">
+            <label class="label">Condition</label><br>
+            <mat-form-field [appearance]="none" class="inputs">
+                <section class="example-section">
+                    <mat-checkbox formControlName="used">Used</mat-checkbox>
+                    <mat-checkbox formControlName="new" class="check-box">New</mat-checkbox>
+                </section>
+                <textarea matInput hidden></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="btn">
+            <button mat-raised-button color="primary" type="submit">SEARCH</button>
+        </div>
+    
+    </div>
+</form>

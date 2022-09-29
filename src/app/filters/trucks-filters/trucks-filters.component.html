@@ -1,0 +1,113 @@
+<!--Filters-->
+<form [formGroup]="trucksForm" (ngSubmit)="search()">
+  <div fxLayout.xs="row wrap" class="custom-p-m">
+
+    <mat-form-field appearance="outline" class="inputs">
+        <mat-label>All brands</mat-label>
+        <mat-select formControlName="brand">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let mark of marks" [value]="mark">
+            {{mark}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field  appearance="outline" class="inputs">
+        <mat-label>All models</mat-label>
+        <input matInput autocomplete="off" formControlName="model">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline" class="inputs">
+        <mat-label>Price to</mat-label>
+        <input matInput type="number" autocomplete="off" formControlName="priceTo">
+    </mat-form-field>
+
+    <div class="two-fields">
+      <mat-form-field appearance="outline" class="year">
+          <mat-label>Year from</mat-label>
+          <mat-select formControlName="yearFrom">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">
+              {{ year }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="year">
+          <mat-label>Year to</mat-label>
+          <mat-select formControlName="yearTo">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">
+              {{ year }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Bodywork</mat-label>
+        <mat-select formControlName="bodywork">
+          <mat-option>None</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Fuel</mat-label>
+        <mat-select formControlName="fuel">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let type of fuel" [value]="type">{{ type }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Country</mat-label>
+        <mat-select formControlName="country">
+          <mat-option>None</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Used and new</mat-label>
+        <mat-select formControlName="usedAndNew">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let trucks of newOrUsedTrucks" [value]="trucks">
+            {{ trucks }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+   
+
+          <div class="btn" fxFlexOrder.xs="3">
+            <button mat-raised-button color="primary" type="submit">SEARCH</button>
+          </div>
+
+          <div class="two-fields" fxFlexOrder.xs="1">
+            <mat-form-field [appearance]="none" class="check-box-container"> 
+              <mat-checkbox formControlName="credit" class="check-box">Credit</mat-checkbox>
+              <textarea matInput hidden></textarea>
+            </mat-form-field>
+
+            <mat-form-field [appearance]="none" class="check-box-container"> 
+              <mat-checkbox formControlName="leasing" class="check-box">Leasing</mat-checkbox>
+              <textarea matInput hidden></textarea>
+            </mat-form-field>
+          </div>
+
+        <div class="two-fields" fxFlexOrder.xs="2">
+          <mat-form-field [appearance]="none" class="ads">
+            <a class="links">Latest ads</a>
+            <textarea matInput hidden></textarea>  
+          </mat-form-field>
+          <mat-form-field [appearance]="none" class="ads">
+            <a class="links">New trucks</a>
+            <textarea matInput hidden></textarea>  
+          </mat-form-field>
+        </div>
+    
+
+        <div class="btn" fxFlexOrder.xs="4">
+          <button mat-stroked-button color="primary" routerLink="/advanced-trucks-filters" type="button">Advanced search</button>
+        </div>
+    </div>
+</form>

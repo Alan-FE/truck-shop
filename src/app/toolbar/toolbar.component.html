@@ -1,0 +1,84 @@
+<!--Toolbar-->
+<mat-toolbar class="mat-elevation-z10 toolbar" color="primary" fxLayout="row">
+
+    <span routerLink="/" class="logo">Truck shop</span>
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-start" fxHide.xs>
+        <div fxLayout fxLayoutGap="20px" class="menu-items">
+            <div class="nav-link">
+                <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <mat-icon>home</mat-icon>
+                    <span> Home </span> 
+                </a>
+                <a mat-button routerLinkActive="active" (click)="isLogged()">
+                    <mat-icon>edit</mat-icon>
+                    <span> Post an ad </span> 
+                </a>
+            </div>
+        </div>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
+        <div fxLayout fxLayoutGap="12px" class="menu-items">
+            <ng-container *ngIf="!authService.loggedUser">
+                <a mat-raised-button routerLink="/registration" routerLinkActive="active-register" class="register">
+                    <mat-icon>perm_identity</mat-icon>
+                    <span> Register </span>
+                </a>
+                <a mat-stroked-button routerLink="/login" routerLinkActive="active" class="login">
+                    <mat-icon>login</mat-icon>
+                    <span> Login </span> 
+                </a>
+            </ng-container>
+        
+            <ng-container *ngIf="authService.loggedUser">
+                <button mat-raised-button [matMenuTriggerFor]="logout" class="btns">{{ authService.userData.first_name }} 
+                    <mat-icon>arrow_drop_down</mat-icon></button>
+                <mat-menu #logout="matMenu">
+                    <button mat-menu-item routerLink="/account/settings">
+                        <mat-icon>perm_identity</mat-icon>
+                        <span>Profile</span>
+                    </button>
+                    <button mat-menu-item (click)="logOut()">
+                        <mat-icon>logout</mat-icon>
+                        <span>Logout</span>
+                    </button>
+                </mat-menu>
+            </ng-container>
+        </div>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs class="responsive-menu">
+        <a class="valign-center" mat-icon-button [matMenuTriggerFor]="menu" aria-label="additional links">
+            <mat-icon>menu</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item  routerLink="/">
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+            </button>
+            <button mat-menu-item (click)="isLogged()"> 
+                <mat-icon>edit</mat-icon>
+                <span>Post an ad</span> 
+            </button>
+            <ng-container *ngIf="!authService.loggedUser">
+                <button mat-menu-item routerLink="/registration">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Register</span>
+                </button>
+                <button mat-menu-item routerLink="/login">
+                    <mat-icon>login</mat-icon>
+                    <span>Login</span> 
+                </button>
+            </ng-container>
+            <ng-container *ngIf="authService.loggedUser">
+                <button mat-menu-item routerLink="/account/settings">
+                    <mat-icon>perm_identity</mat-icon>
+                    <span>Profile</span>
+                </button>
+                <button mat-menu-item (click)="logOut()">
+                    <mat-icon>logout</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </ng-container>
+        </mat-menu>
+    </div>
+</mat-toolbar>

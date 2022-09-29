@@ -1,0 +1,25 @@
+.carousel-container {
+    margin: 0px auto 1.5rem auto;
+    text-align: center;
+};
+  
+.carousel {
+  width: 60%;
+  margin: 0 auto;
+};
+
+.fav-icon {
+  padding-top: 10px;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.message-icon {
+  cursor: pointer;
+};
+
+@media (max-width: 620px) { 
+  .carousel {
+    width: 80%!important;
+  }
+}

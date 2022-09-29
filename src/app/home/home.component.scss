@@ -1,0 +1,53 @@
+.filter-container {
+    max-width: 704px;
+    min-height: 300px;
+    padding: 0px;
+    margin: 0px 20px 1.5rem 20px;
+
+    .icons {
+        height: 28px;
+        &:hover {
+            cursor: pointer;
+        };
+    };
+
+    .content {
+        padding: 16px;
+    };
+};
+
+.card-container {
+    margin: 0px 20px;
+};
+
+.ad-card {
+    margin: 6.25px;
+
+    .card-image {
+        height: 110px;
+        object-fit: cover;
+    };
+    
+    .no-image {
+        height: 110px;
+        width: 140px;
+        margin: 0px auto 16px auto;
+    }
+
+    .price-year-container {
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+            font-weight: 600;
+        };
+    };
+
+    &:hover {
+        cursor: pointer;
+    };
+ };
+
+ mat-card-content {
+    min-width: 163.55px;
+ }

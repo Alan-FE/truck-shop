@@ -1,0 +1,75 @@
+%card {
+    display: flex;
+    max-width: 930px;
+    margin: 25px auto;
+    padding: 0px;
+
+    .left-side {
+        border-right: 1px solid #E8E9EB;
+    };
+    .content {
+        display: inline-block;
+        width: 100%;
+        padding: 20px;
+    };
+};
+
+%menu {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 249px;
+    background-color: rgb(255, 255, 255);
+}
+
+%container-field {
+    display: inline-block;
+    width: 50%;
+    .inputs {
+        display: block;
+        width: 100%;
+        font-size: 12px;
+        padding: 8px;
+        box-sizing: border-box;
+    };
+};
+
+%password-container {
+    display: block;
+    width: 100%;
+    .inputs {
+        display: inline-block;
+        width: 50%;
+        font-size: 12px;
+        padding: 8px;
+        box-sizing: border-box;
+    };
+    ::ng-deep .mat-form-field-wrapper{
+        padding-bottom: 0px;
+     }
+};
+
+@media (max-width: 768px) {
+	%container-field {
+        width: 100%;
+    };
+
+    %password-container {
+        .inputs {
+            width: 100%;
+        }
+    }
+    
+};
+
+@media (max-width: 576px) {
+    %card {
+        flex-direction: column;
+    };
+
+    %menu {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: scroll;
+    };
+
+};

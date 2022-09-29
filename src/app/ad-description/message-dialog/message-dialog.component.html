@@ -1,0 +1,13 @@
+<!--Message dialog-->
+<form [formGroup]="messageForm" (ngSubmit)="send()">
+
+    <mat-form-field appearance="outline" class="message-container">
+        <mat-label>Write a message</mat-label>
+        <textarea matInput class="message" formControlName="message"></textarea>
+    </mat-form-field>
+
+    <div class="btns">
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+        <button mat-raised-button type="submit" class="btn" [disabled]="!messageForm.valid">Send</button>
+    </div>
+</form>

@@ -1,0 +1,131 @@
+@import '../../../shared-style-second';
+
+.container {
+    padding: 10px;
+};
+
+.card {
+    max-width: 1144px;
+    margin: 0 auto;
+};
+
+
+.inputs {
+   @extend %inpt-size;
+};
+
+.inpt-two-field {
+    @extend %inpt-two-field; 
+}
+
+.inpt-text {
+    @extend %inpt-text;
+}
+
+.btn {
+    @extend %btn;
+};
+
+.check-group {
+    padding: 8px;
+    font-weight: 500;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+};
+
+.btn-to-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+::ng-deep .mat-form-field .mat-form-field-wrapper {
+    margin: 0px!important;
+    padding: 0px!important;
+}
+
+.sort-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sort {
+    width: 25%;
+    font-size: 12px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/////////Card
+.advanced-card {
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 0px;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+.wide-card {
+    width: 60%;
+    padding: 16px;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+  .image-container {
+    width: 40%;
+  };
+
+  .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0px!important;
+  }
+
+  .text {
+    display: flex;
+    justify-content: space-around;
+    padding: 2px;
+  }
+
+  //Table card
+
+  .card-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.card-table thead tr {
+    text-align: left;
+}
+
+.card-table th,
+.card-table td {
+    padding: 3px 3px;
+}
+
+.card-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.card-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.card-table tbody tr:last-of-type {
+    border-bottom: 1px solid rgb(235, 237, 239);
+}
+
+.card-table tbody {
+    font-weight: bold;
+    color: grey;
+}

@@ -1,0 +1,41 @@
+@import '../../../shared-style';
+
+form {
+
+    .two-fields {
+        @extend %two-input-size;
+    }
+    
+    .inputs {
+        @extend %input-size;
+    };
+    
+    .btn {
+        @extend %btn-size;
+    };
+    
+    .check-box-container {
+        width: 74px!important;
+        .check-box {
+            width: 74px!important;
+        };
+    }
+    
+    .ads {
+        width: 100%;
+    
+        .links {
+            cursor: pointer;
+            color: #3f51b5;
+    
+            &:hover {
+                color: #6177f2;
+            }
+        }
+    }
+}
+
+::ng-deep .custom-p-m .mat-form-field .mat-form-field-wrapper {
+    margin: 0px!important;
+    padding: 0px!important;
+}

@@ -1,0 +1,114 @@
+<!--Ad description-->
+<ng-container *ngIf="imagesArr">
+    <app-image-carousel [imageData]="imagesArr" [obj]="adObj"></app-image-carousel>
+</ng-container>
+
+<ng-container *ngIf="adObj">
+    <mat-card class="desc-card">
+        <mat-card-header>
+
+        <mat-card-title>Basic information</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content class="content">
+
+            <mat-list class="list">
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Manufacturer</span> <span class="info-right">{{ adObj.manufacturer }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Tread depth</span> <span class="info-right">{{ adObj.tread_depth }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Season</span> <span class="info-right">{{ adObj.season }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Condition</span> <span class="info-right">{{ adObj.used }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Width</span> <span class="info-right">{{ adObj.width }}</span>
+                    </div>
+                </mat-list-item>
+
+                
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Dot marking</span> <span class="info-right">{{ adObj.dot_marking }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Radius</span> <span class="info-right">{{ adObj.radius }}</span>
+                    </div>
+                </mat-list-item>
+
+
+            </mat-list>
+
+            <mat-list class="list l-lp">
+
+                <mat-divider class="show-divider"></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Fixed price</span> <span class="info-right">{{ adObj.fixed_price == 1 ? 'Yes' : 'No' }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Price per set</span> <span class="info-right">{{ adObj.price_per_set ? adObj.price_per_set  : 'By appointment' }} $</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Price per piece</span> <span class="info-right">{{ adObj.price_per_piece ? adObj.price_per_piece : 'By appointment' }} $</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Advertisement number</span> <span class="info-right">{{ adObj.id }}</span>
+                    </div>
+                </mat-list-item>
+        
+            </mat-list>
+
+        </mat-card-content>
+    </mat-card>
+
+</ng-container>

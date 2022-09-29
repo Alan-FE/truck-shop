@@ -1,0 +1,6 @@
+<!--Image carousel-->
+<div class="carousel-container">
+    <gallery [items]="items"  imageSize="cover" fluid thumbPosition="top" class="carousel"></gallery>
+    <mat-icon class="fav-icon" color="warn" (click)="addToFavorites()">favorite_border</mat-icon>
+    <mat-icon class="message-icon" (click)="openDialog()">mail_outline</mat-icon>
+</div>

@@ -1,0 +1,189 @@
+<!--Parts form multi use-->
+<ng-container *ngIf="partsForm">
+    <form [formGroup]="partsForm" (ngSubmit)="postAd()">
+        <div class="label-container">
+            <label class="label-text">Add images</label>
+        </div>
+        <ngx-dropzone (change)="onSelect($event)">
+            <ngx-dropzone-label>Drop images!</ngx-dropzone-label>
+            <ngx-dropzone-preview *ngFor="let f of files; let i = index" [removable]="true" (removed)="onRemove(f, i)">
+              <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+            </ngx-dropzone-preview>
+          </ngx-dropzone>
+    
+        <div class="label-container">
+            <label class="label-text">Vehicle type and make:</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Subcategory</mat-label>
+            <mat-select formControlName="subcategory">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let category of trucksCategory" [value]="category">{{ category }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Brand</mat-label>
+            <mat-select formControlName="brand">
+                <mat-option>None</mat-option>
+                <mat-option value="bosch">Bosch</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Basic information</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Parts and equipment group</mat-label>
+            <mat-select formControlName="partsAndEquipmentGroup">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let group of groupParts" [value]="group">{{ group }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+    
+        <div class="label-container">
+            <label class="label-text">Condition</label>
+        </div>
+    
+        <mat-form-field [appearance]="none" class="inputs">
+            <mat-radio-group formControlName="used">
+                <mat-radio-button value="used">Used</mat-radio-button>
+            </mat-radio-group>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Ad title</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="ad-title">
+            <mat-label>Ad title</mat-label>
+            <input matInput autocomplete="off" formControlName="adTitle">
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Price</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="By appointment" autocomplete="off" formControlName="price">
+        </mat-form-field>
+    
+    
+        <mat-form-field [appearance]="none" class="radio-btns">
+            <mat-radio-group formControlName="currency">
+                <div class="radio-group">
+                    <mat-radio-button value="$">$</mat-radio-button>
+                    <mat-radio-button value="€">€</mat-radio-button>
+                </div>
+            </mat-radio-group>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="fixedPrice">Fixed price</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Shipping method</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>No preference</mat-label>
+            <mat-select formControlName="shippingMethod">
+              <mat-option>None</mat-option>
+              <mat-option value="Credit card">Credit card</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Ad description</label>
+        </div>
+        
+        <div class="desc-container">
+            <mat-form-field appearance="outline" class="desc">
+                <mat-label>Add description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+    
+        <div class="label-container">
+            <label class="label-text">Contact details</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Address</mat-label>
+            <input matInput autocomplete="off" formControlName="address">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Zip code</mat-label>
+            <input matInput autocomplete="off" formControlName="zipCode">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city">
+                <mat-option>None</mat-option>
+                <mat-option value="Sacramento">Sacramento</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country">
+                <mat-option>None</mat-option>
+                <mat-option value="California">California</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Mobile phone</mat-label>
+            <input matInput autocomplete="off" formControlName="mobilePhone">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Mobile phone 2</mat-label>
+            <input matInput autocomplete="off" formControlName="mobilePhone2">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Phone number</mat-label>
+            <input matInput autocomplete="off" formControlName="phoneNumber">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Phone number 2</mat-label>
+            <input matInput autocomplete="off" formControlName="phoneNumber2">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Fax</mat-label>
+            <input matInput autocomplete="off" formControlName="fax">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>First name</mat-label>
+            <input matInput autocomplete="off" formControlName="firstName">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Last name</mat-label>
+            <input matInput autocomplete="off" formControlName="lastName">
+        </mat-form-field>
+    
+        <div class="btns">
+            <button mat-stroked-button color="warn" type="button" routerLink="/account/active-ads">Cancel</button>
+            <button mat-raised-button color="primary" type="button" type="submit">
+                {{ editMode ? 'Update' : 'Post an ad' }}</button>
+        </div>
+    
+    </form>
+</ng-container>

@@ -1,0 +1,45 @@
+<!--Account navigation-->
+<div class="account-container">
+  <mat-card class="account-card">
+    <div class="left-side">
+      <div class="menu" cdkMenu>
+
+        <button class="menu-item" routerLink="settings" routerLinkActive="active">
+          <mat-icon>perm_identity</mat-icon>Account
+        </button>
+
+        <button class="menu-item" routerLink="password" routerLinkActive="active">
+          <mat-icon>password</mat-icon> Password
+        </button>
+
+        <button class="menu-item" routerLink="messages" routerLinkActive="active">
+          <mat-icon> mail_outline</mat-icon> Messages
+        </button>
+
+        <button class="menu-item" routerLink="active-ads" routerLinkActive="active">
+          <mat-icon>check</mat-icon> Active ads
+        </button>
+
+        <button class="menu-item" routerLink="inactive-ads" routerLinkActive="active">
+          <mat-icon>close</mat-icon> Inactive ads
+        </button>
+
+        <button class="menu-item" routerLink="favorites" routerLinkActive="active">
+          <mat-icon>favorite_border</mat-icon> Favorites
+        </button>
+
+        <button class="menu-item" routerLink="delete-account" routerLinkActive="active">
+          <mat-icon>delete_outline</mat-icon> Delete account
+        </button>
+        
+      </div>
+    </div>
+
+
+    <mat-card-content class="content">
+
+      <router-outlet></router-outlet>
+      
+    </mat-card-content>
+</mat-card>
+</div>

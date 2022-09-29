@@ -1,0 +1,75 @@
+<!--Filters-->
+<form [formGroup]="tireForm" (ngSubmit)="search()">
+    
+    <div class="group">
+        <label class="label">Tire category</label><br>
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Trucks</mat-label>
+            <mat-select formControlName="tireCategory">
+            <mat-option>None</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group-right">
+        <label class="label">Season</label><br>
+        <mat-form-field [appearance]="none" class="radio-btns">
+            <mat-radio-group aria-label="Select an option" formControlName="season">
+                <mat-radio-button value="winter" class="radio-opt">Winter</mat-radio-button>
+                <mat-radio-button value="summer" class="radio-opt">Summer</mat-radio-button>
+                <mat-radio-button value="all-seasons" class="radio-opt">All seasons</mat-radio-button>
+            </mat-radio-group>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="group">
+        <label class="label">Dimensions</label><br>
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Width</mat-label>
+            <mat-select formControlName="width">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let tire of tiresWidth" [value]="tire">{{ tire }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group">
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Height</mat-label>
+            <mat-select formControlName="height">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let tire of tiresHeight" [value]="tire">{{ tire }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group">
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Diameter (R)</mat-label>
+            <mat-select formControlName="diameter">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let diameter of diameters" [value]="diameter">{{ diameter }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="group checks-btn">
+        <div class="left">
+            <label class="label">Condition</label><br>
+            <mat-form-field [appearance]="none" class="inputs">
+                <section class="example-section">
+                    <mat-checkbox formControlName="used">Used</mat-checkbox>
+                    <mat-checkbox formControlName="new" class="check-box">New</mat-checkbox>
+                </section>
+                <textarea matInput hidden></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="btn">
+            <button mat-raised-button color="primary" type="submit">SEARCH</button>
+        </div>
+    
+    </div>
+
+</form>

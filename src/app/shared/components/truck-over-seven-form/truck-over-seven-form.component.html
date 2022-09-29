@@ -1,0 +1,634 @@
+<!--Truck over seven form multi use-->
+<ng-container *ngIf="truckOverSevenForm">
+    <form [formGroup]="truckOverSevenForm" (ngSubmit)="post()">
+        <div class="label-container">
+            <label class="label-text">Add images</label>
+        </div>
+        <ngx-dropzone (change)="onSelect($event)">
+            <ngx-dropzone-label>Drop images!</ngx-dropzone-label>
+            <ngx-dropzone-preview *ngFor="let f of files; let i = index" [removable]="true" (removed)="onRemove(f, i)">
+              <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+            </ngx-dropzone-preview>
+          </ngx-dropzone>
+    
+        <div class="label-container">
+            <label class="label-text">Brand and model</label>
+        </div>
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Brand</mat-label>
+            <mat-select formControlName="brand">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Model</mat-label>
+            <input matInput autocomplete="off" formControlName="model">
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Basic information</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Year</mat-label>
+            <input matInput autocomplete="off" formControlName="year">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Bodywork</mat-label>
+            <mat-select formControlName="bodywork">
+              <mat-option>None</mat-option>
+              <mat-option value="kiper">Kiper</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Fuel</mat-label>
+            <mat-select formControlName="fuel">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let f of fuel" [value]="f">{{ f }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">More information</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Cubic capacity (cm3)</mat-label>
+            <input matInput autocomplete="off" formControlName="cm3">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Horsepower (HP)</mat-label>
+            <input matInput autocomplete="off" formControlName="hp">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Mileage</mat-label>
+            <input matInput autocomplete="off" formControlName="mileage">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Max. load capacity (kg)</mat-label>
+            <input matInput autocomplete="off" formControlName="maxLoadCapacity">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Chassis height</mat-label>
+            <mat-select formControlName="chassisHeight">
+                <mat-option>None</mat-option>
+                <mat-option value="Normal height (900mm)">Normal height (900mm)</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Engine emission class</mat-label>
+            <mat-select formControlName="emissionClass">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let eC of emissionClass" [value]="eC">{{ eC }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Transmission</mat-label>
+            <mat-select formControlName="transmission">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let type of transmission" [value]="type">{{ type }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Suspension</mat-label>
+            <mat-select formControlName="suspension">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let suspension of suspensions" [value]="suspension">{{ suspension }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Number of axles</mat-label>
+            <mat-select formControlName="noOfAxles">
+                <mat-option>None</mat-option>
+                <mat-option value="3">3</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Drive</mat-label>
+            <mat-select formControlName="drive">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let d of drive" [value]="d">{{ d }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Color</mat-label>
+            <mat-select formControlName="color">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let color of colors" [value]="color">{{ color }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Registered until</mat-label>
+            <mat-select formControlName="registeredUntil">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let registration of registeredUntil" [value]="registration">{{ registration }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Damaged</mat-label>
+            <mat-select formControlName="damaged">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let d of damaged" [value]="d">{{ d }}</mat-option>
+              </mat-select>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Ownership Information</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Origin of the vehicle</mat-label>
+            <mat-select formControlName="originOfTheVehicle">
+                <mat-option>None</mat-option>
+                <mat-option value="florida">Florida</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Vehicle condition</label>
+        </div>
+        
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="firstOwner">First owner</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+          
+          <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="purchasedNew">Purchased new</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="warranty">Warranty</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="garaged">Garaged</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="serviceBook">Service book</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="spareKey">Spare key</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Security</label>
+        </div>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="airbag">Airbag</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="codedKey">Coded key</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="centralLocking">Central locking</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="alarm">Alarm</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="abs">ABS</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="esp">ESP</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="asr">ASR</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="pneumaticBrakes">Pneumatic brakes</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="powerfulAuxiliaryBrakes">Powerful auxiliary brakes</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Equipment</label>
+        </div>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="airConditioning">Air conditioning</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="powerSteering">Power steering</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="electricWindows">Electric windows</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="electricMirrors">Electric mirrors</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="travelComputer">Travel computer</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="cruiseControl">Cruise control</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="navigation">Navigation</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="radioConnection">Radio connection</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="tintedWindows">Tinted windows</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="allWheelDrive">All-wheel drive</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="reinforcedRearSuspension">Reinforced rear suspension</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="tarpaulin">Tarpaulin</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="cargoAreaProtection">Cargo area protection</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="hydraulicLifters">Hydraulic lifters</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="tailLift">Tail lift</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="crane">Crane</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="fogLights">Fog lights</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="xenonLights">Xenon lights</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="lightSensors">Light sensors</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="rainSensors">Rain sensors</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="parkingSensors">Parking sensors</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="webasto">Webasto</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="seatHeating">Seat heating</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="sleepingCabin">Sleeping cabin</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="tv">TV</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="dvd">DVD</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="radioCassettePlayer">Radio/Cassette player</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="radioCd">Radio CD</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="cdChanger">CD changer</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+          <hr class="hr-line">
+    
+          <h3 class="subtitle">Financing method</h3>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="credit">Credit</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+          <br>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="leasing">Leasing</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <hr class="hr-line">
+    
+        <div class="label-container">
+            <label class="label-text">Method of sale</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs"> 
+            <mat-label>Select the sales method</mat-label>
+            <mat-select formControlName="salesMethod">
+                <mat-option>None</mat-option>
+                <mat-option value="Credit card">Credit card</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Price</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="By appointment" autocomplete="off" formControlName="price">
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="radio-btns">
+            <mat-radio-group formControlName="priceWithOrWithoutTax">
+                <div class="radio-btn">
+                    <mat-radio-button value="priceWithTax">Price with Tax</mat-radio-button>
+                </div>
+                <div class="radio-btn">
+                    <mat-radio-button value="priceWithoutTax">Price without Tax</mat-radio-button>
+                </div>
+            </mat-radio-group>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="fixedPrice">Fixed price</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <mat-form-field [appearance]="none" class="inputs"> 
+            <section>
+              <mat-checkbox class="check-box" formControlName="exchange">Exchange</mat-checkbox>
+            </section>
+            <textarea matInput hidden></textarea>
+        </mat-form-field>
+    
+        <div class="label-container">
+            <label class="label-text">Ad description</label>
+        </div>
+        
+        <div class="desc-container">
+          <mat-form-field appearance="outline" class="desc">
+              <mat-label>Add description</mat-label>
+              <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+        </div>
+    
+        <div class="label-container">
+            <label class="label-text">Contact details</label>
+        </div>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Address</mat-label>
+            <input matInput autocomplete="off" formControlName="address">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Zip code</mat-label>
+            <input matInput autocomplete="off" formControlName="zipCode">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city">
+              <mat-option>None</mat-option>
+              <mat-option value="Florida City">Florida City</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country">
+              <mat-option>None</mat-option>
+              <mat-option value="Florida">Florida</mat-option>
+            </mat-select>
+            </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Mobile phone</mat-label>
+            <input matInput autocomplete="off" formControlName="mobilePhone">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Mobile phone 2</mat-label>
+            <input matInput autocomplete="off" formControlName="mobilePhone2">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Phone number</mat-label>
+            <input matInput autocomplete="off" formControlName="phoneNumber">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Phone number 2</mat-label>
+            <input matInput autocomplete="off" formControlName="phoneNumber2">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Fax</mat-label>
+            <input matInput autocomplete="off" formControlName="fax">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>First name</mat-label>
+            <input matInput autocomplete="off" formControlName="firstName">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Last name</mat-label>
+            <input matInput autocomplete="off" formControlName="lastName">
+        </mat-form-field>
+    
+        <div class="btns">
+            <button mat-stroked-button color="warn" type="button" routerLink="/account/active-ads">Cancel</button>
+            <button mat-raised-button color="primary" type="button" type="submit">{{ editMode ? 'Update' : 'Post an ad' }}</button>
+        </div>
+    </form>
+    
+</ng-container>

@@ -1,0 +1,21 @@
+.card-container {
+    padding: 10px;
+    .ad-card {
+        max-width: 948px;
+        min-height: 300px;
+        padding: 0px;
+        margin: 0px auto;
+    
+        .icons {
+            height: 28px;
+            &:hover {
+                cursor: pointer;
+            };
+        };
+    
+        .content {
+            padding: 16px;
+        };
+    }
+}
+

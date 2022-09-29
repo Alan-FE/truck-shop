@@ -1,0 +1,41 @@
+@import '../../../../shared-style';
+
+.label-container {
+    margin: 19.125px 0px;
+    .label-text {
+        margin: 8px;
+        font-size: 24px;
+        font-weight: 550;
+    };
+};
+
+.inputs {
+    @extend %input-size;
+};
+
+.inpts-radio {
+   @extend %inpts-radio;
+};
+
+.subtitle {
+    margin: 8px;
+    font-weight: 500;
+};
+
+.hr-line {
+    border-top: 1px solid #000
+};
+
+.desc-container {
+    @extend %desc;
+};
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        width: 203px;
+        margin: 8px;
+    };
+};

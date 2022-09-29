@@ -1,0 +1,26 @@
+@import '../../../../shared-style';
+
+.group {
+    @extend %group;
+};
+
+.group-right {
+    @extend %group-right;
+}
+
+.m-l {
+    margin-left: 20px;
+};
+
+.checks-btn {
+    @extend %btn-inpt;
+}
+
+
+.radio-opt {
+   width: 33.33333333333333%;
+};
+
+.btn {
+    @extend %btn-size;
+};

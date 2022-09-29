@@ -1,0 +1,51 @@
+@import '../../../../shared-style';
+
+.label-container {
+    margin: 19.125px 0px;
+    .label-text {
+        margin: 8px;
+        font-size: 24px;
+        font-weight: 550;
+    };
+};
+
+.inputs {
+    @extend %input-size
+};
+
+.ad-title {
+    width: 432px;
+    font-size: 12px;
+    margin: 8px;
+}
+
+.subtitle {
+    margin: 8px;
+    font-weight: 500;
+};
+
+.radio-btns {
+    @extend %input-size;
+    .radio-group {
+        display: flex;
+        justify-content: space-between;
+    }
+};
+
+.hr-line {
+    border-top: 1px solid #000
+};
+
+.desc-container {
+    @extend %desc;
+};
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        width: 203px;
+        margin: 8px;
+    };
+};

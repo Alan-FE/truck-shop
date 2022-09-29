@@ -1,0 +1,18 @@
+@import '../../../../shared-style';
+
+.radio-container {
+    @extend %rims-size;    
+};
+
+
+.group {
+    @extend %group;
+};
+
+.checks-btn {
+    @extend %btn-inpt;
+}
+
+.btn {
+   @extend %btn-size;
+};

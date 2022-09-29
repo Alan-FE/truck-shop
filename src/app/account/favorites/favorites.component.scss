@@ -1,0 +1,40 @@
+@import '../../../shared-style';
+
+.heading {
+    @extend %heading;
+};
+
+.ad-card {
+    margin: 6.25px;
+
+    .card-image {
+        height: 110px;
+        object-fit: cover;
+    };
+
+    .no-image {
+        height: 110px;
+        width: 140px;
+        margin: 0px auto 16px auto;
+    }
+
+    .price-year-container {
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+            font-weight: 600;
+        };
+    };
+
+    &:hover {
+        cursor: pointer;
+    };
+ };
+
+ .favorite-icon {
+    position: absolute;
+    bottom: 60px;
+    left: 5px;
+    cursor: pointer;
+ }

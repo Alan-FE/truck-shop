@@ -1,0 +1,60 @@
+.toolbar {
+    margin-bottom: 1.5rem;
+};
+
+.logo {
+    cursor: pointer;
+    margin-right: 26px;
+}
+
+.valign-center {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+};
+
+a {
+  text-decoration: none;
+  color: white;
+};
+
+a:hover, a:active {
+  color: lightgray;
+};
+
+.menu-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+};
+
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  z-index: 999;
+};
+
+.register {
+    background-color:#e9ecf0;
+    color: black;
+    &:hover {
+        color: #283593!important
+    }
+};
+
+.login {
+    border-color: #fff;
+};
+
+.active {
+    background-color: #283593;
+};
+
+.active-register {
+    background-color: #cdcbcb;
+};
+
+::ng-deep .mat-menu-panel .mat-menu-content {
+    padding: 0px!important;
+};

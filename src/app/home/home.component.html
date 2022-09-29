@@ -1,0 +1,185 @@
+<!--Home-->
+<mat-card class="filter-container" >
+
+    <mat-tab-group backgroundColor="primary" dynamicHeight>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <img class="icons" src="../../assets/truck-to-7.svg" alt="truck-to-7">
+        </ng-template>
+        <mat-card-content class="content">
+          <app-trucks-filters [category]="'Under7'"></app-trucks-filters>
+        </mat-card-content>
+      </mat-tab>
+    
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <img class="icons" src="../../assets/truck-over-7.svg" alt="truck-over-7">
+        </ng-template>
+        <mat-card-content class="content">
+          <app-trucks-filters [category]="'Over7'"></app-trucks-filters>
+        </mat-card-content>
+      </mat-tab>
+    
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <img class="icons" src="../../assets/trailer.svg" alt="trailer">
+        </ng-template>
+        <mat-card-content class="content">
+          <app-trailer-filters></app-trailer-filters>
+        </mat-card-content>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <img class="icons" src="../../assets/parts.svg" alt="parts">       
+        </ng-template>
+          <mat-tab-group selectedIndex="0">
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <img class="icons" src="../../assets/tire.svg" alt="truck-to-7">
+              </ng-template>
+              <mat-card-content class="content">
+                <app-tire-filter></app-tire-filter>
+              </mat-card-content>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <img class="icons" src="../../assets/rims.svg" alt="truck-to-7">
+              </ng-template>
+              <mat-card-content class="content">
+                <app-rims-filter></app-rims-filter>
+              </mat-card-content>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <img class="icons" src="../../assets/parts.svg" alt="truck-to-7">
+              </ng-template>
+              <mat-card-content class="content">
+                <app-parts-filters></app-parts-filters>
+              </mat-card-content>
+            </mat-tab>
+
+          </mat-tab-group>
+      </mat-tab>
+    </mat-tab-group>
+
+</mat-card>
+
+<!--Cards-->
+
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="center center">
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(25%-12.5px)" *ngFor="let ad of trucksAds"  
+  [routerLink]="'ad-description/' + ad.id">
+      <ng-container *ngIf="ad.thumbnail">
+        <img mat-card-image [src]="ad.thumbnail" 
+        alt="Picture" class="card-image">
+      </ng-container>
+
+      <ng-container *ngIf="!ad.thumbnail">
+        <img mat-card-image src="../../../assets/no-img.svg" 
+        alt="Picture" class="no-image">
+      </ng-container>
+
+      <mat-card-content>
+        <div>{{ ad.brand }} {{ ad.model }}</div>
+        <div class="price-year-container">
+          <span class="price">{{ ad.price }} $</span>
+          <span class="year">{{ ad.year }}. year</span>
+        </div>
+    
+      </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(25%-12.5px)" *ngFor="let ad of trailersAds"
+  [routerLink]="'trailer-description/' + ad.id">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.svg" 
+      alt="Picture"  class="no-image">
+    </ng-container>
+  
+    <mat-card-content>
+      <div>{{ ad.brand }} {{ ad.model }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price }} $</span>
+        <span class="year">{{ ad.year }}. year</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(25%-12.5px)" *ngFor="let ad of tiresAds"
+  [routerLink]="'tires-description/' + ad.id">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.svg" 
+      alt="Picture"  class="no-image">
+    </ng-container>
+ 
+    <mat-card-content>
+      <div>{{ ad.manufacturer }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price_per_set }} $</span>
+        <span class="year">{{ ad.season }} season</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(25%-12.5px)" *ngFor="let ad of rimsAds"
+  [routerLink]="'rims-description/' + ad.id">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.svg" 
+      alt="Picture"  class="no-image">
+    </ng-container>
+   
+    <mat-card-content>
+      <div>For car {{ ad.brand }} | {{ ad.manufacturer }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price_per_set }} $</span>
+        <span class="year">{{ ad.type }}</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(25%-12.5px)" *ngFor="let ad of partsAds"
+  [routerLink]="'parts-description/' + ad.id">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.svg" 
+      alt="Picture" class="no-image">
+    </ng-container>
+   
+    <mat-card-content>
+      
+      <div>{{ ad.brand }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price }} $</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

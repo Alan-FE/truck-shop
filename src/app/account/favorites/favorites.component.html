@@ -1,0 +1,115 @@
+<!--Favorites cards all different-->
+<div class="heading">Favorites</div>
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="center center">
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(33%-12.5px)" *ngFor="let ad of trucksAds">
+      <ng-container *ngIf="ad.thumbnail">
+        <img mat-card-image [src]="ad.thumbnail" 
+        alt="Picture" class="card-image">
+      </ng-container>
+
+      <ng-container *ngIf="!ad.thumbnail">
+        <img mat-card-image src="../../../assets/no-img.png" 
+        alt="Picture" class="no-image">
+      </ng-container>
+      
+      <mat-icon (click)="removeFromFavorites(ad)" color="warn" class="favorite-icon">favorite</mat-icon>
+      <mat-card-content>
+          <br>
+        <div>{{ ad.brand }} {{ ad.model }}</div>
+        <div class="price-year-container">
+          <span class="price">{{ ad.price }} $</span>
+          <span class="year">{{ ad.year }}. year</span>
+        </div>
+    
+      </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(33%-12.5px)" *ngFor="let ad of trailersAds">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.png" 
+      alt="Picture" class="card-image">
+    </ng-container>
+    <mat-icon (click)="removeFromFavorites(ad)" color="warn"  class="favorite-icon">favorite</mat-icon>
+    <mat-card-content>
+        <br>
+      <div>{{ ad.brand }} {{ ad.model }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price }} $</span>
+        <span class="year">{{ ad.year }}. year</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(33%-12.5px)" *ngFor="let ad of tiresAds">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.png" 
+      alt="Picture" class="card-image">
+    </ng-container>
+    <mat-icon (click)="removeFromFavorites(ad)" color="warn"  class="favorite-icon">favorite</mat-icon>
+    <mat-card-content>
+        <br>
+      <div>{{ ad.brand }} {{ ad.model }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price }} $</span>
+        <span class="year">{{ ad.year }}. year</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(33%-12.5px)" *ngFor="let ad of rimsAds">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.png" 
+      alt="Picture" class="card-image">
+    </ng-container>
+    <mat-icon (click)="removeFromFavorites(ad)" color="warn"  class="favorite-icon">favorite</mat-icon>
+    <mat-card-content>
+        <br>
+      <div>{{ ad.brand }} {{ ad.manufacturer }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price_per_set }} $</span>
+        <span class="year">{{ ad.type }}</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ad-card" fxFlex.lt-sm="calc(33%-12.5px)" *ngFor="let ad of partsAds">
+    <ng-container *ngIf="ad.thumbnail">
+      <img mat-card-image [src]="ad.thumbnail" 
+      alt="Picture" class="card-image">
+    </ng-container>
+
+    <ng-container *ngIf="!ad.thumbnail">
+      <img mat-card-image src="../../../assets/no-img.png" 
+      alt="Picture" class="card-image">
+    </ng-container>
+    <mat-icon (click)="removeFromFavorites(ad)" color="warn"  class="favorite-icon">favorite</mat-icon>
+    <mat-card-content>
+        <br>
+      <div>{{ ad.brand }}</div>
+      <div class="price-year-container">
+        <span class="price">{{ ad.price }} $</span>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

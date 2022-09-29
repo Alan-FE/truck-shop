@@ -1,0 +1,22 @@
+.card-container {
+    width: 948px;
+    margin: auto;
+    .ad-card {
+        min-width: 900px;
+        min-height: 300px;
+        padding: 0px;
+        margin-left: 20px;
+    
+        .icons {
+            height: 28px;
+            &:hover {
+                cursor: pointer;
+            };
+        };
+    
+        .content {
+            padding: 16px;
+        };
+    }
+}
+

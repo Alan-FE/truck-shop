@@ -1,0 +1,273 @@
+<!--Ad description-->
+<ng-container *ngIf="imagesArr">
+    <app-image-carousel [imageData]="imagesArr" [obj]="adObj"></app-image-carousel>
+</ng-container>
+
+<ng-container *ngIf="adObj">
+    <mat-card class="desc-card">
+        <mat-card-header>
+
+        <mat-card-title>General information</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content class="content">
+
+            <mat-list class="list">
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Condition</span> <span class="info-right">Used vehicle</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Brand</span> <span class="info-right">{{ adObj.brand }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Model</span> <span class="info-right">{{ adObj.model }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Year</span> <span class="info-right">{{ adObj.year }}.</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Mileage</span> <span class="info-right">{{ adObj.mileage }} mi</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Bodywork</span> <span class="info-right">{{ adObj.bodywork }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Fuel</span> <span class="info-right">{{ adObj.fuel }}</span>
+                    </div>
+                </mat-list-item>
+
+            </mat-list>
+
+            <mat-list class="list l-lp">
+
+                <mat-divider class="show-divider"></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Fixed price</span> <span class="info-right">{{ adObj.fixed_price == 1 ? 'Yes' : 'No' }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Price</span> <span class="info-right">{{ adObj.price ? adObj.price :  'By appointment' }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Substitution</span> <span class="info-right">{{ adObj.substitution == 1 ? 'Yes' : 'No' }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Advertisement number</span> <span class="info-right">{{ adObj.id }}</span>
+                    </div>
+                </mat-list-item>
+        
+            </mat-list>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="desc-card">
+        <mat-card-header>
+
+        <mat-card-title>Additional information</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content class="content">
+
+            <mat-list class="list">
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Power(cm3)</span> <span class="info-right">{{ adObj.cubic_capacity }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Power((hp))</span> <span class="info-right">{{ adObj.power_hp }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Chassis height</span> <span class="info-right">{{ adObj.chassis_height}}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Engine emission class</span> <span class="info-right">{{ adObj.engine_emission }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Transmission</span> <span class="info-right">{{ adObj.transmission }}</span>
+                    </div>
+                </mat-list-item>
+
+            </mat-list>
+
+            <mat-list class="list l-lp">
+                <mat-divider class="show-divider"></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Number of axles</span> <span class="info-right">{{ adObj.no_of_axles }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Drive</span> <span class="info-right">{{ adObj.drive }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Registered until</span> <span class="info-right">{{ adObj.registered_until }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Origin of the vehicle</span> <span class="info-right">{{ adObj.vehicle_origin }}</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>
+                    <div class="info">
+                        <span>Damage</span> <span class="info-right">{{ adObj.damaged }}</span>
+                    </div>
+                </mat-list-item>
+        
+            </mat-list>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="desc-card" *ngIf="securityArr.length!==0">
+        <mat-card-header>
+
+        <mat-card-title>Security</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+
+            <ng-container *ngFor="let security of securityArr">
+                <div class="info-box">
+                    <span>{{ security }}</span>
+                </div>
+            </ng-container>
+
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="desc-card" *ngIf="equipmentArr.length!==0">
+        <mat-card-header>
+
+        <mat-card-title>Equipment</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+
+            <ng-container *ngFor="let equipment of equipmentArr">
+                <div class="info-box">
+                    <span>{{ equipment }}</span>
+                </div>
+            </ng-container>
+
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="desc-card" *ngIf="conditionArr.length!==0">
+        <mat-card-header>
+
+        <mat-card-title>Condition</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+
+            <ng-container *ngFor="let condition of conditionArr">
+                <div class="info-box">
+                    <span>{{ condition }}</span>
+                </div>
+            </ng-container>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="desc-card" *ngIf="adObj.description">
+        <mat-card-header>
+
+        <mat-card-title>Description</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+
+            <div class="desc-text">{{ adObj.description }}</div>
+
+        </mat-card-content>
+    </mat-card>
+</ng-container>

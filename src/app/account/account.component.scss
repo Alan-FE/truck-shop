@@ -1,0 +1,57 @@
+@import '../../colors';
+@import '../../account-style.scss';
+
+.account-container {
+  padding: 10px;
+};
+
+.account-card {
+    @extend %card;
+};
+
+.content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu {
+    @extend %menu;
+};
+  
+.menu-item {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  color: #333;
+  user-select: none;
+  padding: 15px 20px;
+  border-bottom: 1px solid #E8E9EB;
+  border-radius: 0;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+};
+
+
+.menu-item:active {
+  background-color: rgb(170, 170, 170);
+};
+
+.card-right-side {
+  display: inline-block;
+  padding-left: 20px;
+};
+
+:ng-deep .mat-form-field-wrapper {
+  padding: 0px;
+};
+
+mat-icon {
+  margin-right: 5px;
+};
+
+.active {
+  background: $primary-color;
+  color: #fff;
+};

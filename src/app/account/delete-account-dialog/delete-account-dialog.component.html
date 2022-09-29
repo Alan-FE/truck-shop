@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Delete account</h1>
+<div mat-dialog-content>
+  Are you sure you want to delete the account?
+</div>
+<br>
+<form [formGroup]="deleteForm" (ngSubmit)="deleteAccount()">
+
+  <mat-form-field appearance="outline" class="message-container">
+      <mat-label>Enter a password</mat-label>
+      <input matInput type="password" autocomplete="off" formControlName="password">
+  </mat-form-field>
+
+  <div class="btns">
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+      <button mat-raised-button color="warn" type="submit" class="btn" [disabled]="!deleteForm.valid">Delete</button>
+  </div>
+</form>

@@ -1,0 +1,70 @@
+<!--Card-->
+<div class="card-container">
+    <mat-card class="ad-card">
+        <mat-tab-group backgroundColor="primary" dynamicHeight>
+            <mat-tab>
+            <ng-template mat-tab-label>
+                <img class="icons" src="../../assets/truck-to-7.svg" alt="truck-to-7">
+            </ng-template>
+            <mat-card-content class="content">
+                <app-ad-truck-to-seven></app-ad-truck-to-seven>
+            </mat-card-content>
+            </mat-tab>
+        
+            <mat-tab>
+            <ng-template mat-tab-label>
+                <img class="icons" src="../../assets/truck-over-7.svg" alt="truck-over-7">
+            </ng-template>
+            <mat-card-content class="content">
+                <app-ad-truck-over-seven></app-ad-truck-over-seven>
+            </mat-card-content>
+            </mat-tab>
+        
+            <mat-tab>
+            <ng-template mat-tab-label>
+                <img class="icons" src="../../assets/trailer.svg" alt="trailer">
+            </ng-template>
+            <mat-card-content class="content">
+                <app-ad-trailers></app-ad-trailers>
+            </mat-card-content>
+            </mat-tab>
+    
+            <mat-tab>
+            <ng-template mat-tab-label>
+                <img class="icons" src="../../assets/parts.svg" alt="parts">       
+            </ng-template>
+                <mat-tab-group selectedIndex="0">
+    
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/tire.svg" alt="truck-to-7">
+                    </ng-template>
+                    <mat-card-content class="content">
+                        <app-tire></app-tire>
+                    </mat-card-content>
+                </mat-tab>
+    
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/rims.svg" alt="truck-to-7">
+                    </ng-template>
+                    <mat-card-content class="content">
+                        <app-rims></app-rims>
+                    </mat-card-content>
+                </mat-tab>
+    
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                    <img class="icons" src="../../assets/parts.svg" alt="truck-to-7">
+                    </ng-template>
+                    <mat-card-content class="content">
+                        <app-truck-parts></app-truck-parts>
+                    </mat-card-content>
+                </mat-tab>
+    
+                </mat-tab-group>
+            </mat-tab>
+        </mat-tab-group>
+    
+    </mat-card>
+</div>

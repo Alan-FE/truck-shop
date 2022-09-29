@@ -1,0 +1,27 @@
+@import '../../../shared-style';
+@import '../../../account-style.scss';
+
+.account-form {
+    .heading {
+        @extend %heading;
+    }
+}
+
+.container-field {
+   @extend %container-field;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+    button {
+        width: 105px;
+        line-height: 48px;
+    };
+}
+
+::ng-deep .mat-form-field .mat-form-field-wrapper {
+    margin: 0px!important;
+    padding: 0px!important;
+}

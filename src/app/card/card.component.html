@@ -1,0 +1,25 @@
+<!--Card truck ad-->
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="center center" class="card-container">
+
+    <mat-card class="ad-card" fxFlex.lt-sm="calc(25%-12.5px)" *ngFor="let ad of truckAds"
+        [routerLink]="'ad-description/' + ad.id">
+        <ng-container *ngIf="ad.thumbnail">
+          <img mat-card-image [src]="ad.thumbnail" class="card-image"
+          alt="Picture">
+        </ng-container>
+        <ng-container *ngIf="!ad.thumbnail">
+          <img mat-card-image src="../../assets/no-img.svg" class="no-image"
+          alt="Picture">
+        </ng-container>
+        <mat-card-content>
+      
+          <div>{{ ad.brand }} {{ ad.model }}</div>
+          <div class="price-year-container">
+            <span class="price">{{ ad.price }} $</span>
+            <span class="year">{{ ad.year }}. year</span>
+          </div>
+      
+        </mat-card-content>
+    </mat-card>
+ 
+</div>
